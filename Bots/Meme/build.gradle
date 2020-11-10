@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(":General:Common")
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.21'
+}

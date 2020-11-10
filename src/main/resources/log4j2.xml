@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout>
+                <MarkerPatternSelector defaultPattern="[%d{yyyy-MM-dd, HH:mm:ss}] [%level] %msg%n">
+                    <PatternMatch key="NF" pattern="%msg%n"/>
+                </MarkerPatternSelector>
+            </PatternLayout>
+        </Console>
+        <RollingRandomAccessFile name="LogFile" fileName="logs/logs.log" filePattern="logs/logs-%i.log">
+            <PatternLayout pattern="[%d{yyyy-MM-dd, HH:mm:ss}] [%logger/%level] %msg%n"/>
+            <DefaultRolloverStrategy max="10000" fileIndex="max"/>
+            <Policies>
+                <OnStartupTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="1 GB" />
+            </Policies>
+        </RollingRandomAccessFile>
+    </Appenders>
+    <Loggers>
+        <Logger name="meme" level="all" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="LogFile"/>
+        </Logger>
+        <Logger name="combot" level="all" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="LogFile"/>
+        </Logger>
+        <Logger name="general" level="all" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="LogFile"/>
+        </Logger>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="LogFile"/>
+        </Root>
+    </Loggers>
+</Configuration>

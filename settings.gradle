@@ -1,0 +1,8 @@
+rootProject.name = 'meme-bot'
+
+include(":General:Common")
+
+include(":Bots:Meme")
+include(":Bots:ComBot")
+include(":Bots:Mafia")
+

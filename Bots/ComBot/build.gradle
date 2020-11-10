@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(":General:Common")
+    compile group: 'com.beust', name: 'klaxon', version: '5.4'
+    compile 'org.jsoup:jsoup:1.10.2'
+    compile group: 'net.sf.jopt-simple', name: 'jopt-simple', version: '5.0.4'
+
+
+}
